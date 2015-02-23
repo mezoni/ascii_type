@@ -1,5 +1,5 @@
 library ascii_type;
 
-import "package:charcode/ascii.dart" as ascii;
+import "package:ascii/ascii.dart";
 
 part "src/ascii_type.dart";

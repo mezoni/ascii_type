@@ -28,53 +28,53 @@ const int _XDIGIT = _UPPER << 1;
 
 List<int> _generateLookup() {
   var result = new List<int>.filled(128, 0);
-  for (var i = ascii.$nul; i <= ascii.$us; i++) {
+  for (var i = Ascii.NUL; i <= Ascii.US; i++) {
     result[i] |= _CNTRL;
   }
 
-  result[ascii.$ht] |= _BLANK | _SPACE;
-  result[ascii.$lf] |= _SPACE;
-  result[ascii.$vt] |= _SPACE;
-  result[ascii.$ff] |= _SPACE;
-  result[ascii.$cr] |= _SPACE;
-  result[ascii.$space] |= _BLANK | _PRINT | _SPACE;
-  for (var i = ascii.$exclamation; i <= ascii.$division; i++) {
+  result[Ascii.HT] |= _BLANK | _SPACE;
+  result[Ascii.LF] |= _SPACE;
+  result[Ascii.VT] |= _SPACE;
+  result[Ascii.FF] |= _SPACE;
+  result[Ascii.CR] |= _SPACE;
+  result[Ascii.SPACE] |= _BLANK | _PRINT | _SPACE;
+  for (var i = Ascii.EXCLAMATION_MARK; i <= Ascii.SLASH; i++) {
     result[i] |= _GRAPH | _PRINT | _PUNCT;
   }
 
-  for (var i = ascii.$0; i <= ascii.$9; i++) {
+  for (var i = Ascii.NUMBER_0; i <= Ascii.NUMBER_9; i++) {
     result[i] |= _ALNUM | _DIGIT | _GRAPH | _PRINT | _XDIGIT;
   }
 
-  for (var i = ascii.$colon; i <= ascii.$at; i++) {
+  for (var i = Ascii.COLON; i <= Ascii.AT_SIGN; i++) {
     result[i] |= _GRAPH | _PRINT | _PUNCT;
   }
 
-  for (var i = ascii.$A; i <= ascii.$F; i++) {
-    result[i] |=  _ALNUM | _ALPHA | _GRAPH | _PRINT | _UPPER | _XDIGIT;
+  for (var i = Ascii.A; i <= Ascii.F; i++) {
+    result[i] |= _ALNUM | _ALPHA | _GRAPH | _PRINT | _UPPER | _XDIGIT;
   }
 
-  for (var i = ascii.$G; i <= ascii.$Z; i++) {
-    result[i] |=  _ALNUM | _ALPHA | _GRAPH | _PRINT | _UPPER;
+  for (var i = Ascii.G; i <= Ascii.Z; i++) {
+    result[i] |= _ALNUM | _ALPHA | _GRAPH | _PRINT | _UPPER;
   }
 
-  for (var i = ascii.$lbracket; i <= ascii.$grave; i++) {
+  for (var i = Ascii.LEFT_SQUARE_BRACKET; i <= Ascii.GRAVE_ACCENT; i++) {
     result[i] |= _GRAPH | _PRINT | _PUNCT;
   }
 
-  for (var i = ascii.$a; i <= ascii.$f; i++) {
-    result[i] |=  _ALNUM | _ALPHA | _GRAPH | _LOWER | _PRINT | _XDIGIT;
+  for (var i = Ascii.a; i <= Ascii.f; i++) {
+    result[i] |= _ALNUM | _ALPHA | _GRAPH | _LOWER | _PRINT | _XDIGIT;
   }
 
-  for (var i = ascii.$g; i <= ascii.$z; i++) {
-    result[i] |=  _ALNUM | _ALPHA | _GRAPH | _LOWER | _PRINT;
+  for (var i = Ascii.g; i <= Ascii.z; i++) {
+    result[i] |= _ALNUM | _ALPHA | _GRAPH | _LOWER | _PRINT;
   }
 
-  for (var i = ascii.$lbrace; i <= ascii.$tilde; i++) {
+  for (var i = Ascii.LEFT_CURLY_BRACKET; i <= Ascii.TILDE; i++) {
     result[i] |= _GRAPH | _PRINT | _PUNCT;
   }
 
-  result[0x7f] |= _CNTRL;
+  result[Ascii.DEL] |= _CNTRL;
   return result;
 }
 
