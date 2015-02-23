@@ -1,0 +1,10 @@
+name: ascii_type
+version: 0.0.1
+author: Andrew Mezoni <andrew.mezoni@gmail.com>
+description: 'Classification and conversion of ASCII characters. Includes functions:
+  isalnum, isalpha, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct,
+  isspace, isupper, isxdigit, tolower, toupper.'
+homepage: https://github.com/mezoni/ascii_type.git
+dependencies:
+  charcode: any
+  unittest: any
